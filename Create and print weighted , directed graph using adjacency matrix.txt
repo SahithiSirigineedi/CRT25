@@ -1,0 +1,109 @@
+Create and print weighted , directed graph using adjacency matrix
+
+
+def addNode(v):
+    global nodecount
+    if v in nodes:
+        print(v,"is already available in graph")
+    else:
+        nodes.append(v)
+        nodecount=nodecount+1
+    for x in graph:
+        x.append(0)
+    temp=[]
+    for i in range(nodecount):
+        temp.append(0)
+    graph.append(temp)
+    
+def show():
+    for i in range(nodecount):
+        for j in range(nodecount):
+            print(graph[i][j],end=" ")
+        print()
+        
+def addEdge(node1,node2,w):
+    if node1 not in nodes:
+        print(node1," is not available in graph")
+    if node2 not in nodes:
+        print(node2," is not available in graph")
+    else:
+        i=nodes.index(node1)
+        j=nodes.index(node2)
+        graph[i][j]=w
+        #graph[j][i]=w
+nodecount=0
+nodes=[]
+graph=[]
+while True:
+    print()
+    print("1.addNode\n2.addEdge\n3.show\n4.exit")
+    ch=int(input("enter your choice"))
+    if ch==1:
+        v=input("enter node")
+        addNode(v)
+    elif ch==2:
+        node1=input("enter first node")
+        node2=input("enter second node")
+        w=int(input("enter weight"))
+        addEdge(node1,node2,w)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("invalid choice")
+
+
+
+
+1.addNode
+2.addEdge
+3.show
+4.exit
+enter your choice1
+enter nodeA
+1.addNode
+2.addEdge
+3.show
+4.exit
+enter your choice1
+enter nodeB
+1.addNode
+2.addEdge
+3.show
+4.exit
+enter your choice1
+enter nodeC
+1.addNode
+2.addEdge
+3.show
+4.exit
+enter your choice1
+enter nodeD
+1.addNode
+2.addEdge
+3.show
+4.exit
+enter your choice3
+0 0 0 0 
+0 0 0 0 
+0 0 0 0 
+0 0 0 0 
+
+1.addNode
+2.addEdge
+3.show
+4.exit
+enter your choice2
+enter first nodeA
+enter second nodeB
+enter weight34
+1.addNode
+2.addEdge
+3.show
+4.exit
+enter your choice3
+0 34 0 0 
+0 0 0 0 
+0 0 0 0 
+0 0 0 0 
